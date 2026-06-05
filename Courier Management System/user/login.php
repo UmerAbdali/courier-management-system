@@ -114,13 +114,6 @@ body{
         <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="menu">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="../index.php">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.php">User Portal</a></li>
-                <li class="nav-item"><a class="nav-link" href="track_consignment.php">Track</a></li>
-            </ul>
-        </div>
     </div>
 </nav>
 <div class="login-container">
@@ -139,7 +132,7 @@ body{
             <button class="login-btn" type="submit">Login</button>
         </form>
         <div class="login-footer">
-            Don't have an account? <a href="register.php">Register here</a>
+            Don't have an account? <a href="user_register.php">Register here</a>
         </div>
     </div>
 </div>

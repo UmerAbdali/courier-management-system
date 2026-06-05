@@ -6,6 +6,7 @@
 <title>Create Agent - Logistics Transport</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../includes/sidebar-shared.css">
 <style>
 *{
     margin:0;
@@ -106,13 +107,15 @@ body{
         <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link" href="../index.php">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.php">Admin Portal</a></li>
                 <li class="nav-item"><a class="nav-link" href="manage_agent.php">Manage Agents</a></li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="form-container">
+<div class="admin-layout">
+    <?php include '../includes/admin_sidebar.php'; ?>
+    <div class="admin-content">
+        <div class="form-container">
     <div class="form-card">
         <h2><i class="fa-solid fa-user-plus"></i> Create Agent</h2>
         <p>Add a new delivery agent to the system</p>
@@ -129,11 +132,13 @@ body{
         </form>
     </div>
 </div>
+    </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
 <?php 
 include("../includes/dbconnect.php");
-
+include '../includes/footer.php'; 
 ?>

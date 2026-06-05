@@ -1,6 +1,8 @@
 <?php 
     include '../includes/header.php'; 
     include '../includes/dbconnect.php';
+
+    include '../includes/admin_sidebar.php';
 ?>
     <h2>Admin - Download Report for Shipment</h2>
     <form method="post" action="#">
@@ -17,8 +19,3 @@
         <button class="button" type="submit">Download Report</button>
     </form>
 <?php include '../includes/footer.php'; ?>
-
-<?php 
-include("../includes/dbconnect.php");
-
-?>

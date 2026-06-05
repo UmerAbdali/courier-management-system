@@ -1,6 +1,7 @@
 <?php 
     include '../includes/header.php'; 
     include '../includes/dbconnect.php';
+      
 ?>
     <h2>Agent - Status of Branch</h2>
     <p>Branch status information and shipment counts.</p>

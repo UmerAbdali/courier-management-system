@@ -9,6 +9,7 @@
 <title>Admin Shipment History - Courier Management</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../includes/sidebar-shared.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 body{background:#f4f7fb;}
@@ -33,19 +34,15 @@ body{background:#f4f7fb;}
         <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="menu">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="index.php">Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link" href="manage_couriers.php">Couriers</a></li>
-                <li class="nav-item"><a class="nav-link" href="manage_customers.php">Customers</a></li>
-                <li class="nav-item"><a class="nav-link" href="manage_agent.php">Agents</a></li>
-                <li class="nav-item"><a class="nav-link" href="download_report.php">Reports</a></li>
-            </ul>
-            <a href="login.php" class="btn btn-primary">Admin Login</a>
-        </div>
+       
     </div>
 </nav>
-<section class="page-header">
+<div class="admin-layout">
+    <?php include '../includes/admin_sidebar.php'; 
+    include("../includes/dbconnect.php"); 
+    ?>
+    <div class="admin-content">
+        <section class="page-header">
     <div class="container">
         <h1>Shipment History</h1>
         <p class="lead">View courier movements, delivery status, and historical consignment details from the admin portal.</p>
@@ -107,11 +104,9 @@ body{background:#f4f7fb;}
         </div>
     </div>
 </div>
+    </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
-<?php 
-include("../includes/dbconnect.php");
-
-?>

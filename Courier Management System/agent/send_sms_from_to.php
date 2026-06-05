@@ -1,6 +1,7 @@
 <?php 
     include '../includes/header.php'; 
     include '../includes/dbconnect.php';
+    
 ?>
     <h2>Agent - Send SMS (From / To)</h2>
     <form method="post" action="#">
@@ -12,4 +13,5 @@
         <textarea id="message" name="message" rows="4" required></textarea>
         <button class="button" type="submit">Send SMS</button>
     </form>
+
 <?php include '../includes/footer.php'; ?>

@@ -98,7 +98,7 @@ body{
     <div class="container">
         <a class="navbar-brand" href="../index.php">
             <i class="fa-solid fa-truck-fast text-danger"></i>
-            Logistik
+            Courier Management System
         </a>
         <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
             <span class="navbar-toggler-icon"></span>
@@ -106,7 +106,6 @@ body{
         <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link" href="../index.php">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.php">User Portal</a></li>
                 <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
             </ul>
         </div>

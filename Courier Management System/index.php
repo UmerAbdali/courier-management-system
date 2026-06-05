@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Logistics Transport</title>
+<title>Courier Management System</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -186,7 +186,16 @@ body{
 
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Portal
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="pagesDropdown">
+                        <li><a class="dropdown-item" href="admin/adminlogin.php">Admin Login</a></li>
+                        <li><a class="dropdown-item" href="agent/agentlogin.php">Agent Login</a></li>
+                        <li><a class="dropdown-item" href="user/user_register.php">User Register</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">News</a></li>
@@ -247,20 +256,18 @@ body{
         </div>
 
         <div class="service-item active">
-            Air Freight
+            Road Freight
         </div>
 
         <div class="service-item">
-            Air Freight
+            Fast Delivery
         </div>
 
     </div>
 
     <!-- Delivery Boy -->
 
-    <img src="https://pngimg.com/uploads/delivery_man/delivery_man_PNG30.png"
-         class="delivery-boy"
-         alt="delivery">
+   
 
 </section>
 
@@ -269,7 +276,3 @@ body{
 </body>
 </html>
 
-<?php 
-include("../includes/dbconnect.php");
-
-?>

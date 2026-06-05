@@ -1,7 +1,9 @@
 <?php 
     include '../includes/header.php'; 
     include '../includes/dbconnect.php';
-?>
+    include '../includes/admin_sidebar.php';
+      ?>
+
     <h2>Admin - Send SMS (From / To)</h2>
     <form method="post" action="#">
         <label for="from">From</label>
@@ -12,5 +14,5 @@
         <textarea id="message" name="message" rows="4" required></textarea>
         <button class="button" type="submit">Send SMS</button>
     </form>
-<?php include '../includes/footer.php'; ?>
 
+ <?php include '../includes/footer.php';?>

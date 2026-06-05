@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Update Courier - Logistics Transport</title>
+<title>Agent Login - Logistics Transport</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="../includes/sidebar-shared.css">
 <style>
 *{
     margin:0;
@@ -30,27 +29,27 @@ body{
     color:#fff !important;
     margin:0 12px;
 }
-.form-container{
+.login-container{
     display:flex;
     min-height:calc(100vh - 80px);
     align-items:center;
     justify-content:center;
     padding:40px 20px;
 }
-.form-card{
+.login-card{
     background:#fff;
     border-radius:8px;
     box-shadow:0 4px 15px rgba(0,0,0,0.1);
     padding:50px 40px;
     width:100%;
-    max-width:480px;
+    max-width:420px;
 }
-.form-card h2{
+.login-card h2{
     color:#071c2d;
     margin-bottom:10px;
     font-weight:700;
 }
-.form-card p{
+.login-card p{
     color:#666;
     margin-bottom:30px;
     font-size:14px;
@@ -64,8 +63,7 @@ body{
     margin-bottom:8px;
     display:block;
 }
-.form-group input,
-.form-group select{
+.form-group input{
     width:100%;
     padding:12px 15px;
     border:1px solid #ddd;
@@ -73,13 +71,12 @@ body{
     font-size:14px;
     transition:0.3s;
 }
-.form-group input:focus,
-.form-group select:focus{
+.form-group input:focus{
     border-color:#e31e24;
     outline:none;
     box-shadow:0 0 0 3px rgba(227,30,36,0.1);
 }
-.submit-btn{
+.login-btn{
     background:#e31e24;
     color:#fff;
     border:none;
@@ -91,12 +88,27 @@ body{
     margin-top:10px;
     transition:0.3s;
 }
-.submit-btn:hover{
+.login-btn:hover{
     background:#c71a1f;
+}
+.nav-links{
+    margin-top:25px;
+    padding-top:25px;
+    border-top:1px solid #eee;
+    text-align:center;
+    font-size:14px;
+}
+.nav-links a{
+    color:#e31e24;
+    text-decoration:none;
+    font-weight:600;
+    margin:0 10px;
 }
 </style>
 </head>
 <body>
+    <main>
+        
 <nav class="navbar navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand" href="../index.php">
@@ -105,45 +117,34 @@ body{
         </a>
         <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
             <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menu">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="../index.php">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.php">Admin Portal</a></li>
-                <li class="nav-item"><a class="nav-link" href="view_couriers.php">View Couriers</a></li>
-            </ul>
-        </div>
+        </button>        
     </div>
 </nav>
-<div class="admin-layout">
-    <?php include '../includes/admin_sidebar.php'; 
-    include("../includes/dbconnect.php");
-    ?>
-    <div class="admin-content">
-        <div class="form-container">
-    <div class="form-card">
-        <h2><i class="fa-solid fa-pen-to-square"></i> Update Courier</h2>
-        <p>Update the status of a courier shipment</p>
+<div class="login-container">
+    <div class="login-card">
+        <h2><i class="fa-solid fa-shield"></i> Agent Login</h2>
+        <p>Access the agent panel to manage your logistics system</p>
         <form method="post" action="#">
             <div class="form-group">
-                <label for="consignment">Consignment Number</label>
-                <input type="text" id="consignment" name="consignment" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-                <label for="status">Update Status</label>
-                <select id="status" name="status" required>
-                    <option value="">-- Select Status --</option>
-                    <option value="pending">Pending</option>
-                    <option value="in_transit">In Transit</option>
-                    <option value="delivered">Delivered</option>
-                </select>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
             </div>
-            <button class="submit-btn" type="submit"><i class="fa-solid fa-check"></i> Update Courier</button>
+            <button class="login-btn" type="submit">Login</button>
         </form>
+       
     </div>
 </div>
-    </div>
-</div>
+
+</main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+<?php 
+include("../includes/dbconnect.php");
+
+?>

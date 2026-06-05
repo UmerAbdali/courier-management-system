@@ -1,6 +1,7 @@
 <?php 
     include '../includes/header.php'; 
     include '../includes/dbconnect.php';
+   
 ?>
     <h2>Agent - Download Report from Branch</h2>
     <form method="post" action="#">

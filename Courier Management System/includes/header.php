@@ -1,6 +1,8 @@
 <?php
 // Common header for Courier Management System pages
 $currentDir = basename(dirname($_SERVER['SCRIPT_NAME']));
+$currentScript = basename($_SERVER['SCRIPT_NAME']);
+$isSidebar = in_array($currentDir, ['admin', 'agent']) && !in_array($currentScript, ['login.php', 'adminlogin.php', 'agentlogin.php']);
 $bodyClass = $currentDir === 'admin' ? 'admin-bg' : '';
 ?>
 <!DOCTYPE html>
@@ -175,6 +177,73 @@ $bodyClass = $currentDir === 'admin' ? 'admin-bg' : '';
             color: #1f2937;
         }
 
+        .page-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 24px;
+            max-width: 1280px;
+            margin: 24px auto 40px;
+            padding: 0 18px;
+        }
+
+        .sidebar {
+            background: #ffffff;
+            border: 1px solid rgba(249, 115, 22, 0.18);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+            min-height: calc(100vh - 112px);
+            position: sticky;
+            top: 20px;
+            align-self: start;
+        }
+
+        .sidebar h2 {
+            margin: 0 0 16px;
+            font-size: 1.2rem;
+            color: #1f2937;
+        }
+
+        .sidebar p {
+            margin: 0 0 18px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 12px 16px;
+            border-radius: 14px;
+            background: rgba(249, 115, 22, 0.08);
+            color: #334155;
+            text-decoration: none;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background: rgba(249, 115, 22, 0.18);
+            color: #1f2937;
+        }
+
+        @media (max-width: 980px) {
+            .page-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: relative;
+                top: 0;
+                min-height: auto;
+            }
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -251,4 +320,31 @@ $bodyClass = $currentDir === 'admin' ? 'admin-bg' : '';
     <header>
         <h1>Courier Management System</h1>
     </header>
+    <?php if ($isSidebar): ?>
+    <div class="page-layout">
+        <aside class="sidebar">
+            <h2><?php echo ucfirst($currentDir); ?> Panel</h2>
+            <p>Quick access to the main tools and actions for your dashboard.</p>
+            <nav class="sidebar-nav">
+                <?php if ($currentDir === 'agent'): ?>
+                    <a class="<?php echo $currentScript === 'new_courier.php' ? 'active' : ''; ?>" href="new_courier.php">New Courier</a>
+                    <a class="<?php echo $currentScript === 'view_couriers.php' ? 'active' : ''; ?>" href="view_couriers.php">View Couriers</a>
+                    <a class="<?php echo $currentScript === 'send_sms_from_to.php' ? 'active' : ''; ?>" href="send_sms_from_to.php">Send SMS</a>
+                    <a class="<?php echo $currentScript === 'send_delivery_sms.php' ? 'active' : ''; ?>" href="send_delivery_sms.php">Delivery SMS</a>
+                    <a class="<?php echo $currentScript === 'branch_status.php' ? 'active' : ''; ?>" href="branch_status.php">Branch Status</a>
+                    <a class="<?php echo $currentScript === 'download_report.php' ? 'active' : ''; ?>" href="download_report.php">Download Report</a>
+                <?php else: ?>
+                    <a class="<?php echo $currentScript === 'index.php' ? 'active' : ''; ?>" href="index.php">Dashboard</a>
+                    <a class="<?php echo $currentScript === 'new_courier.php' ? 'active' : ''; ?>" href="new_courier.php">New Courier</a>
+                    <a class="<?php echo $currentScript === 'view_couriers.php' ? 'active' : ''; ?>" href="view_couriers.php">View Couriers</a>
+                    <a class="<?php echo $currentScript === 'manage_customers.php' ? 'active' : ''; ?>" href="manage_customers.php">Customers</a>
+                    <a class="<?php echo $currentScript === 'manage_agent.php' ? 'active' : ''; ?>" href="manage_agent.php">Agents</a>
+                    <a class="<?php echo $currentScript === 'shipment_history.php' ? 'active' : ''; ?>" href="shipment_history.php">Shipment History</a>
+                    <a class="<?php echo $currentScript === 'download_report.php' ? 'active' : ''; ?>" href="download_report.php">Download Report</a>
+                    <a class="<?php echo $currentScript === 'send_sms_from_to.php' ? 'active' : ''; ?>" href="send_sms_from_to.php">Send SMS</a>
+                    <a class="<?php echo $currentScript === 'send_delivery_sms.php' ? 'active' : ''; ?>" href="send_delivery_sms.php">Delivery SMS</a>
+                <?php endif; ?>
+            </nav>
+        </aside>
+    <?php endif; ?>
     <main class="page-card">

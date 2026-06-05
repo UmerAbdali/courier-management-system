@@ -6,6 +6,7 @@
 <title>New Courier - Logistics Transport</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../includes/sidebar-shared.css">
 <style>
 *{
     margin:0;
@@ -106,13 +107,15 @@ body{
         <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link" href="../index.php">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.php">Admin Portal</a></li>
                 <li class="nav-item"><a class="nav-link" href="view_couriers.php">View Couriers</a></li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="form-container">
+<div class="admin-layout">
+    <?php include '../includes/admin_sidebar.php'; ?>
+    <div class="admin-content">
+        <div class="form-container">
     <div class="form-card">
         <h2><i class="fa-solid fa-box-open"></i> New Courier</h2>
         <p>Create a new courier shipment entry in the system</p>
@@ -135,6 +138,8 @@ body{
             </div>
             <button class="submit-btn" type="submit"><i class="fa-solid fa-check"></i> Create Courier</button>
         </form>
+    </div>
+</div>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
