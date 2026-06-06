@@ -5,9 +5,9 @@ $username = "root";
 $password = "";
 $database = "courier_management";
 
-$connection = mysqli_connect($server, $username, $password, $database);
+$conn = mysqli_connect($server, $username, $password, $database);
 
-if(!$connection) {
+if(!$conn) {
     die("Database Connection Failed");
 }
 ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2026 at 09:11 PM
+-- Generation Time: Jun 06, 2026 at 05:39 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `courier_management`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `add_courier`
+--
+
+CREATE TABLE `add_courier` (
+  `Id` int(11) NOT NULL,
+  `Tracking_number` varchar(60) NOT NULL,
+  `Sender_name` varchar(55) NOT NULL,
+  `Reciver_name` varchar(55) NOT NULL,
+  `Destination` varchar(25) NOT NULL,
+  `Status` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -52,19 +67,6 @@ CREATE TABLE `agent` (
   `agent_user` varchar(55) NOT NULL,
   `agent_email` varchar(20) NOT NULL,
   `agent_password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `new courier`
---
-
-CREATE TABLE `new courier` (
-  `Consignment Number` varchar(70) NOT NULL,
-  `Sender Name` varchar(55) NOT NULL,
-  `Reciever Name` varchar(55) NOT NULL,
-  `Destination` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -133,7 +134,7 @@ body{
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button class="login-btn" type="submit">Login</button>
+            <button class="login-btn" name="btn" type="submit">Login</button>
         </form>
        
     </div>
@@ -146,5 +147,29 @@ body{
 
 <?php 
 include("../includes/dbconnect.php");
+
+if(isset($_POST["btn"])){
+    $username=$_POST["username"];
+    $password=$_POST["password"];
+
+    $query="SELECT * FROM admin WHERE a_username='$username' AND a_password='$password'";
+    $execute=mysqli_query($conn,$query);
+    
+    $row = mysqli_num_rows($execute);
+    if($row>0){
+        $admin = mysqli_fetch_assoc($execute);
+        $_SESSION["AdminID"]=$admin["a_id"];
+        $_SESSION["AdminUsername"]=$admin["a_username"];
+        echo"<script>
+        alert('Login successful')
+        window.location.href='dashboard.php'
+        </script>";
+    }else{
+        echo"<script>
+        alert('Invalid username or password')
+        window.location.href='adminlogin.php'
+        </script>";
+    }
+}
 
 ?>
